@@ -1,9 +1,9 @@
-type City = {
+export type City = {
     id: number,
     name: string,
     description: string,
 }
-type Data = Array<City>
+export type Data = Array<City>
 
 export const data: Data = [
     { id: 1, name: "Москва", description: "msc some data here" },

@@ -1,8 +1,8 @@
-import styles from './page.module.css'
-import {data} from "@/data/getCities";
 import Link from "next/link";
+import {getCities} from "@/data/cities";
 
-export default function Home() {
+export default async function Home() {
+  const data = await getCities()
   return <div>
     <header>
       <ul>
@@ -10,7 +10,7 @@ export default function Home() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/test">Test</Link>
+          <Link href="/test/">Test</Link>
         </li>
       </ul>
     </header>

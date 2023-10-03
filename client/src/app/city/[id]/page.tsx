@@ -1,9 +1,9 @@
 import styles from '../../page.module.css'
 import {notFound} from "next/navigation";
-import {data} from "@/data/getCities";
+import {getCity} from "@/data/cities";
 
-export default function Page({ params }: { params: { id: string } }) {
-    const city = data.find(c => c.id === Number(params.id))
+export default async function Page({ params }: { params: { id: string } }) {
+    const city = await getCity(Number(params.id))
     if (!city) return notFound()
 
     return <div>
