@@ -1,8 +1,19 @@
 import Link from "next/link";
 import {getCities} from "@/data/cities";
+import {useEffect, useState} from "react";
+import {Data} from "@/data/initialData";
 
-export default async function Home() {
-  const data = await getCities()
+export default function Home() {
+  const [cities, setCities] = useState<Data>([])
+
+  useEffect(() => {
+    getCities()
+      .then(data => {
+        if (data?.length) setCities(data)
+      })
+      .catch(console.error)
+  }, [])
+
   return <div>
     <header>
       <ul>
@@ -15,7 +26,7 @@ export default async function Home() {
       </ul>
     </header>
     <ul>
-      {data.map(city => <li key={city.id}>
+      {cities.map(city => <li key={city.id}>
         <Link href={`/city/${city.id}`}>{city.name}</Link>
       </li>)}
     </ul>

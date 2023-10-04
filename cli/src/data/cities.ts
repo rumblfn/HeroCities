@@ -5,5 +5,6 @@ export const getCities: () => Promise<Data> = async () => {
 }
 
 export const getCity: (id: number) => Promise<City | undefined> = async (id: number) => {
-    return data.find(c => c.id === id)
+    const cities = await getCities()
+    return cities.find(c => c.id === id)
 }
