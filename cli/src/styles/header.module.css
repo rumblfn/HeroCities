@@ -1,0 +1,10 @@
+.header {
+    width: 100%;
+    border-bottom: var(--bg-2);
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}

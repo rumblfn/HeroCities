@@ -1,5 +1,5 @@
 export default function Page() {
-    return <div>
+    return <div className="container">
         Тест
     </div>
 }

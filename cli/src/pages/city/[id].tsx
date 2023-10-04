@@ -16,11 +16,11 @@ export default function Page() {
       .catch(console.error)
   }, [router])
 
-  return city
-    ? <div>
-      <h4>{city.name}</h4>
-      {city.description}
-    </div>
-    : null
+  if (!city) return null
+
+  return <div className="container">
+    <h4>{city.name}</h4>
+    {city.description}
+  </div>
 
 }

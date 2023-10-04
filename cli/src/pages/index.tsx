@@ -2,6 +2,7 @@ import Link from "next/link";
 import {getCities} from "@/data/cities";
 import {useEffect, useState} from "react";
 import {Data} from "@/data/initialData";
+import {Header} from "@/components/Header";
 
 export default function Home() {
   const [cities, setCities] = useState<Data>([])
@@ -14,17 +15,7 @@ export default function Home() {
       .catch(console.error)
   }, [])
 
-  return <div>
-    <header>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/test/">Test</Link>
-        </li>
-      </ul>
-    </header>
+  return <div className="container">
     <ul>
       {cities.map(city => <li key={city.id}>
         <Link href={`/city/${city.id}`}>{city.name}</Link>
