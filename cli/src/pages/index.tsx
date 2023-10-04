@@ -2,7 +2,9 @@ import Link from "next/link";
 import {getCities} from "@/data/cities";
 import {useEffect, useState} from "react";
 import {Data} from "@/data/initialData";
-import {Header} from "@/components/Header";
+import Image from "next/image";
+import styles from "@/styles/index.module.css";
+import {Card} from "@/components/Card";
 
 export default function Home() {
   const [cities, setCities] = useState<Data>([])
@@ -16,10 +18,8 @@ export default function Home() {
   }, [])
 
   return <div className="container">
-    <ul>
-      {cities.map(city => <li key={city.id}>
-        <Link href={`/city/${city.id}`}>{city.name}</Link>
-      </li>)}
-    </ul>
+    <div className={styles.grid}>
+      {cities.map(city => <Card city={city} key={city.id}/>)}
+    </div>
   </div>
 }
