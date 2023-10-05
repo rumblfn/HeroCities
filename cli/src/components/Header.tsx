@@ -1,6 +1,6 @@
 import {FC} from "react";
-import styles from "@/styles/header.module.css";
 import Link from "next/link";
+import styles from "@/styles/header.module.css";
 
 export const Header: FC = () => {
     return <header className={styles.header}>

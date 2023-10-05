@@ -1,10 +1,8 @@
-import Link from "next/link";
-import {getCities} from "@/data/cities";
-import {useEffect, useState} from "react";
-import {Data} from "@/data/initialData";
-import Image from "next/image";
-import styles from "@/styles/index.module.css";
 import {Card} from "@/components/Card";
+import {getCities} from "@/data/cities";
+import {Data} from "@/data/initialData";
+import {useEffect, useState} from "react";
+import styles from "@/styles/index.module.css";
 
 export default function Home() {
   const [cities, setCities] = useState<Data>([])
