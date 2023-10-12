@@ -6,10 +6,10 @@ export const Header: FC = () => {
     return <header className={styles.header}>
         <div className={`${styles.wrapper} container`}>
             <div className="link">
-                <Link href="/">Home</Link>
+                <Link href="/">Главная</Link>
             </div>
             <div className="link">
-                <Link href="/test/">Test</Link>
+                <Link href="/test/">Тест</Link>
             </div>
         </div>
     </header>

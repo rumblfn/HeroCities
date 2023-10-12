@@ -1,5 +1,10 @@
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 16px  ;
+    columns: 3;
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    /*gap: 16px;*/
+    /*display: grid;*/
+}
+
+.grid > * {
+    margin-bottom: 24px;
 }
