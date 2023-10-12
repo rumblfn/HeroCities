@@ -10,14 +10,16 @@ interface CardPropsI {
 
 export const Card: FC<CardPropsI> = ({city}) => {
   return <div className={styles.card}>
-    <Image 
-      width={0}
-      height={0}
-      sizes="100vw"
-      src={city.preview}
-      alt={`preview ${city.name}`}
-      style={{width: '100%', height: 'auto', borderRadius: '10px'}}
-    />
-    <Link href={`/city/${city.id}`}>{city.name}</Link>
+    <Link href={`/city/${city.id}`}>
+      <Image
+        width={0}
+        height={0}
+        sizes="100vw"
+        src={city.preview}
+        alt={`preview ${city.name}`}
+        style={{width: '100%', height: '100%', borderRadius: '10px'}}
+      />
+      <span>{city.name}</span>
+    </Link>
   </div>
 }
