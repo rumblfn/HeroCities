@@ -1,4 +1,4 @@
-import {AnswerVariantsData} from "@/pages/test/inititalTestData";
+import {AnswerVariantsData} from "@/data/inititalTestData"
 import styles from "@/styles/test.module.css";
 
 export default function AnswersField(answerVariants: AnswerVariantsData,

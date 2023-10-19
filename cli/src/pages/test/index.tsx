@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {Data, initialTestData, initialSelectedOptions} from "./inititalTestData";
+import {Data, initialTestData, initialSelectedOptions} from "@/data/inititalTestData"
 import AnswersField from "@/components/AnswersField";
 import styles from "@/styles/test.module.css";
 
