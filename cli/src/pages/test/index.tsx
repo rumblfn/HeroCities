@@ -20,8 +20,8 @@ export default function Test() {
         let style: Object = {}
         if (answersChecked) {
             style = {backgroundColor: selectedOptions[questionId - 1] == testData[questionId].correctAnswerId ?
-                    "green" :
-                    "red"}
+                    "#d3ffce" :
+                    "#fa8072"}
         }
         return style
     }
