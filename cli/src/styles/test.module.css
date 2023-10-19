@@ -1,0 +1,26 @@
+.question_block {
+    margin: 0 0 20px 0;
+    padding: 5px;
+}
+
+.question_header {
+
+}
+
+.answers_container {
+
+}
+
+.answer_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.check_answers {
+
+}
+
+.your_result {
+
+}
