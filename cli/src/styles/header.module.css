@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    border-bottom: var(--bg-2);
+    border-bottom: var(--background);
 }
 
 .wrapper {

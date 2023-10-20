@@ -1,7 +1,10 @@
 import {useState, useEffect} from "react";
+import Link from "next/link";
 import {Data, initialTestData, initialSelectedOptions} from "@/data/inititalTestData"
 import AnswersField from "@/components/AnswersField";
 import styles from "@/styles/test.module.css";
+import Image from "next/image";
+import Chart from "@/components/Chart";
 
 export default function Test() {
     const [idsArray, setIdsArray] = useState<number[]>([])
@@ -20,8 +23,9 @@ export default function Test() {
         let style: Object = {}
         if (answersChecked) {
             style = {backgroundColor: selectedOptions[questionId - 1] == testData[questionId].correctAnswerId ?
-                    "#d3ffce" :
-                    "#fa8072"}
+                    "#77e873" :
+                    "#e16b60",
+                    opacity: 0.8}
         }
         return style
     }
@@ -37,6 +41,17 @@ export default function Test() {
         return (correctNumber / allNumber) * 100
     }
 
+    const replayTest = () => {
+        setSelectedOptions(initialSelectedOptions)
+        setAnswersChecked(false)
+        window.scrollTo({top: 0, behavior: 'smooth'})
+    }
+
+    const checkAnswers = () => {
+        setAnswersChecked(true)
+        window.scrollTo({top: 0, behavior: 'smooth'})
+    }
+
     useEffect(() => {
         setTestData(initialTestData)
         const numberIdsArray = Object.keys(initialTestData).map((id) => Number(id))
@@ -49,26 +64,61 @@ export default function Test() {
 
     return (
         <div className="container">
-            {idsArray.map((questionId) => (
-                <div key={questionId} className={styles.question_block} style={getColoredQuestionBlock(questionId)}>
-                    <div className={styles.question_header}>
-                        <p>Вопрос {questionId}:</p>
-                        <p>{testData[questionId].value}</p>
-                    </div>
-                    {AnswersField(
-                        testData[questionId].answerVariants,
-                        questionId,
-                        selectedOptions,
-                        handleOptionsChange,
-                        answersChecked
-                    )}
-                </div>
-            ))}
-            <button className={styles.check_answers} onClick={() => setAnswersChecked(true)}>Check answers</button>
+            <div className={styles.test_header}>
+                <p className={styles.test_header_name}>Тест по городам-героям</p>
+                <p className={styles.test_header_desc}>
+                    <p>Узнайте, насколько хорошо вы знаете историю городов героев.</p>
+                    <p>Предварительно <Link className={styles.learn_material_href} href="/">изучите материал</Link> по данной теме.</p>
+                    <p>Желаем удачи.</p>
+                </p>
+            </div>
             {answersChecked ?
-                <p className={styles.your_result}>Your result is {calculateResult()}%</p> :
+                <div className={styles.your_result_container}>
+                    <div className={styles.your_result}>
+                        {Chart(calculateResult())}
+                    </div>
+                </div>
+                :
                 null
             }
+            <div className={styles.test_base}>
+                <div className={styles.test_base_list}>
+                    {idsArray.map((questionId) => (
+                        <div key={questionId} className={styles.question_block}>
+                            <div className={styles.question_res_line} style={getColoredQuestionBlock(questionId)}>&nbsp;</div>
+                            <div key={questionId} className={styles.question}>
+                                <div className={styles.question_header}>
+                                    <p className={styles.question_header_count}>{questionId} / {idsArray.length}</p>
+                                    <p className={styles.question_header_desc}>{testData[questionId].value}</p>
+                                </div>
+                                {AnswersField(
+                                    testData[questionId],
+                                    questionId,
+                                    selectedOptions,
+                                    handleOptionsChange,
+                                    answersChecked
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className={styles.test_footer}>
+                <div className={styles.test_footer_container}>
+                    <button className={styles.bottom_button} onClick={() => checkAnswers()}>
+                        Проверить
+                        <div className={styles.bottom_button_icon_check}>
+                            <Image src="/check.svg" alt="arrow" width={20} height={20}/>
+                        </div>
+                    </button>
+                    <button className={styles.bottom_button} onClick={() => replayTest()}>
+                        Пройти заново
+                        <div className={styles.bottom_button_icon_restart}>
+                            <Image src="/restart.svg" alt="arrow" width={20} height={20}/>
+                        </div>
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };
