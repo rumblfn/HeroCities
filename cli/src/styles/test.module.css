@@ -3,13 +3,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 80px auto 40px;
 }
 
 .test_header_name {
     text-align: center;
     margin-bottom: 20px;
     font-size: 40px;
-    font-weight: 600;
     width: 70%;
     max-width: 500px;
 }
