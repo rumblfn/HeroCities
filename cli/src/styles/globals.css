@@ -63,3 +63,26 @@ h1 {
   padding: 16px 24px;
   margin: 0 auto;
 }
+
+.carousel {
+  overflow: hidden;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.5s;
+}
+
+.carousel-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.footer {
+  margin-top: 80px;
+  width: 100%;
+  border-top: var(--bg-2);
+  background-color: #FFFFFF;
+}
