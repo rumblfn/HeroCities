@@ -11,7 +11,8 @@
     margin-bottom: 20px;
     font-size: 40px;
     width: 70%;
-    max-width: 500px;
+    max-width: 600px;
+    font-weight: 600;
 }
 
 .test_header_desc {
@@ -20,7 +21,7 @@
     font-size: 14px;
     text-align: center;
     color: var(--additional);
-    max-width: 500px;
+    max-width: 600px;
 }
 
 @media screen and (max-width: 960px) {
@@ -66,7 +67,7 @@
     flex-direction: row;
     margin: 0 0 20px 0;
     padding: 5px;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .question_res_line {
@@ -120,7 +121,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 500px;
+    width: 600px;
 }
 
 .bottom_button {
@@ -187,7 +188,7 @@
 }
 
 .your_result {
-    width: 500px;
+    width: 600px;
     height: 250px;
     border-top-width: 4px;
     border-bottom-width: 4px;
