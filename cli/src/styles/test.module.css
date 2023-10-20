@@ -9,7 +9,7 @@
 .test_header_name {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 40px;
+    font-size: 48px;
     width: 70%;
     max-width: 600px;
 }
@@ -17,7 +17,7 @@
 .test_header_desc {
     width: 90%;
     margin-bottom: 30px;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
     color: var(--additional);
     max-width: 600px;
