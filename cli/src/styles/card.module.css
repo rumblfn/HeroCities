@@ -1,4 +1,9 @@
 .card {
     font-size: 21px;
     border-radius: 15px;
+    text-align: center;
+}
+
+.data {
+    margin-top: 16px;
 }
