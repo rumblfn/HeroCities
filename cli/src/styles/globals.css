@@ -12,7 +12,7 @@
   --primary: #001F99;
   --secondary: #0D40FF;
   --secondary-opc: #5576ea;
-  --secondary-opc-ttl: #5576ea;
+  --secondary-opc-ttl: rgba(85, 118, 234, 0.4);
   --additional: #555A65;
   --text: #2B2D33;
   --bg-1: #808080;
