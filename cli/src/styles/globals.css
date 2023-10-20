@@ -5,12 +5,19 @@
 :root {
   --foreground: #2B2D33;
   --background: #ffffff;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 239, 244, 245;
+  --background-end-rgb: 255, 255, 255;
 
   --primary: #001F99;
   --secondary: #0D40FF;
   --secondary-opc: #5576ea;
   --secondary-opc-ttl: rgba(85, 118, 234, 0.11);
   --additional: #555A65;
+  --text: #2B2D33;
+  --bg-1: #808080;
+  --bg-2: #D7DAE2;
+  --bg-3: #E6E6E6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,10 +36,19 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 90%;
+}
+
+h1 {
+  font-size: 48px;
 }
 
 .link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .link:hover {
@@ -45,4 +61,27 @@ body {
   max-width: 1280px;
   padding: 16px 24px;
   margin: 0 auto;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.5s;
+}
+
+.carousel-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.footer {
+  margin-top: 80px;
+  width: 100%;
+  border-top: var(--bg-2);
+  background-color: #FFFFFF;
 }

@@ -17,9 +17,13 @@ export const Card: FC<CardPropsI> = ({city}) => {
         sizes="100vw"
         src={city.preview}
         alt={`preview ${city.name}`}
-        style={{width: '100%', height: '100%', borderRadius: '10px'}}
+        style={{width: '100%', height: '100%', borderRadius: 6}}
+        className={styles.image}
       />
-      <span>{city.name}</span>
+      <div className={styles.data}>
+        <h4>{city.name}</h4>
+        <p className={styles.text}>{city.formationDate}</p>
+      </div>
     </Link>
   </div>
 }
