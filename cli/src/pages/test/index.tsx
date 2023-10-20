@@ -68,7 +68,7 @@ export default function Test() {
                 <p className={styles.test_header_name}>Тест по городам-героям</p>
                 <p className={styles.test_header_desc}>
                     <p>Узнайте, насколько хорошо вы знаете историю городов героев.</p>
-                    <p>Предварительно <Link className={styles.learn_material_href} href="/">изучите материал</Link> по данной теме.</p>
+                    <p>Предварительно <Link className={styles.learn_material_href} href="/">изучите материалы</Link> по данной теме.</p>
                     <p>Желаем удачи.</p>
                 </p>
             </div>
