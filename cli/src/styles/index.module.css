@@ -1,12 +1,21 @@
 .grid {
     columns: 3;
-    /*grid-template-columns: 1fr 1fr 1fr;*/
-    /*gap: 16px;*/
-    /*display: grid;*/
 }
 
 .grid > * {
     margin-bottom: 24px;
+}
+
+@media screen and (max-width: 960px) {
+    .grid {
+        columns: 2;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .grid {
+        columns: 1;
+    }
 }
 
 .main {

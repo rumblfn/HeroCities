@@ -2,8 +2,34 @@
     font-size: 21px;
     border-radius: 15px;
     text-align: center;
+    clear: both;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    transition: opacity, background-color .22s;
+    overflow: hidden;
+}
+
+.card:hover {
+    background-color: var(--bg-3);
+}
+
+.image {
+    transition: all .5s;
+}
+
+@media screen and (min-width: 961px) {
+    .card:hover .image {
+        transform: scale(1.5) translateY(16%);
+    }
 }
 
 .data {
     margin-top: 16px;
+    padding-bottom: 16px;
+}
+
+.text {
+    font-weight: normal;
+    font-size: 16px;
+    margin-top: 6px;
 }
