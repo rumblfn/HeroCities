@@ -35,6 +35,12 @@ h1 {
   font-size: 48px;
 }
 
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+  }
+}
+
 .link {
   display: flex;
   align-items: center;
