@@ -17,7 +17,7 @@ export default function Home() {
 
   return <div className="container">
     <main className={styles.main}>
-      <h1>Города-герои — Lorem ipsum.</h1>
+      <h1>Города-герои</h1>
       <p className={styles.description}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam
         assumenda, consectetur, consequatur ea earum, eligendi enim est fugiat laborum molestias nihil porro quaerat
