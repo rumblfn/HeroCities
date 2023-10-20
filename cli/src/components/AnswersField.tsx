@@ -1,15 +1,27 @@
-import {AnswerVariantsData} from "@/data/inititalTestData"
+import {AnswerVariant, QuestionData} from "@/data/inititalTestData"
 import styles from "@/styles/test.module.css";
 
-export default function AnswersField(answerVariants: AnswerVariantsData,
+export default function AnswersField(questionData: QuestionData,
                                      questionId: number,
                                      selectedOptions: number[],
                                      handleOptionsChange: (questionId: number, optionId: number) => void,
                                      answersChecked: boolean){
 
+    const getColoredRightAnswer = (answer: AnswerVariant) : Object => {
+        let style: Object = {}
+        if (answersChecked) {
+            style = questionData.correctAnswerId == answer.id ?
+                    {
+                        color: "var(--secondary)"
+                    } :
+                    {}
+        }
+        return style
+    }
+
     return (
         <div className={styles.answer_variants_container}>
-            {answerVariants.map((answer) => (
+            {questionData.answerVariants.map((answer) => (
                 <div className={styles.answer_block} key={answer.id}>
                     <input
                         key={answer.id}
@@ -18,7 +30,7 @@ export default function AnswersField(answerVariants: AnswerVariantsData,
                         onChange={() => handleOptionsChange(questionId, answer.id)}
                         disabled={answersChecked}
                     />
-                    <p>&nbsp;{answer.value}</p>
+                    <div style={getColoredRightAnswer(answer)}>{answer.value}</div>
                 </div>
             ))}
         </div>

@@ -3,12 +3,17 @@
 @tailwind utilities;
 
 :root {
+  --foreground: #2B2D33;
+  --background: #ffffff;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 239, 244, 245;
   --background-end-rgb: 255, 255, 255;
 
   --primary: #001F99;
   --secondary: #0D40FF;
+  --secondary-opc: #5576ea;
+  --secondary-opc-ttl: rgba(85, 118, 234, 0.11);
+  --additional: #555A65;
   --text: #2B2D33;
   --bg-1: #808080;
   --bg-2: #D7DAE2;
@@ -17,20 +22,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground: #ffffff;
+    --background: #2B2D33;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground));
+  background-color: var(--background);
 }
 
 * {
@@ -53,7 +52,7 @@ h1 {
 }
 
 .link:hover {
-  color: #0D40FF;
+  color: var(--secondary);
   transition: all .22s;
 }
 
