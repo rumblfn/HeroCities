@@ -4,7 +4,7 @@ export type City = {
     description: string,
     preview: string,
     formationDate: string,
-    images?: string[],
+    images: string[],
 }
 export type Data = Array<City>
 
@@ -121,6 +121,7 @@ export const data: Data = [
         formationDate: "8 мая 1965 года",
         description: "msc some data here",
         preview: "/cities/preview/bretsk.png",
+        images: ["br1.png", "br2.png", "br3.png"],
     },
     {
         id: 8,
@@ -168,6 +169,7 @@ export const data: Data = [
           "\n" +
           "Все эти факторы, вместе с историческим наследием и подвигами, сделали Минск городом-героем.",
         preview: "/cities/preview/minsk.png",
+        images: ["minsk1.png", "minsk2.png", "minsk3.png"],
     },
     {
         id: 11,
