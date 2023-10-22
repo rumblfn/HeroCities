@@ -38,7 +38,7 @@ export default function Test() {
                 correctNumber += 1
             }
         }
-        return (correctNumber / allNumber) * 100
+        return Math.round((correctNumber / allNumber) * 100)
     }
 
     const replayTest = () => {
