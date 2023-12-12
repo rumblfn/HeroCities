@@ -6,9 +6,32 @@
     margin-bottom: 24px;
 }
 
+.main {
+    text-align: center;
+    max-width: 70%;
+    margin: 48px auto;
+}
+
+.description {
+    margin-top: 28px;
+    font-weight: normal;
+    color: var(--additional);
+}
+
 @media screen and (max-width: 960px) {
     .grid {
         columns: 2;
+    }
+
+    .main {
+        max-width: 100%;
+        padding: 0 12px;
+        margin-top: 12px;
+    }
+
+    .description {
+        text-align: justify;
+        margin-top: 16px;
     }
 }
 
@@ -16,16 +39,4 @@
     .grid {
         columns: 1;
     }
-}
-
-.main {
-    text-align: center;
-    max-width: 70%;
-    margin: 100px auto 64px;
-}
-
-.description {
-    margin-top: 40px;
-    font-weight: normal;
-    color: var(--additional);
 }

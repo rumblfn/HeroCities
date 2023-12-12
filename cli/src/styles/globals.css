@@ -5,12 +5,19 @@
 :root {
   --foreground: #2B2D33;
   --background: #ffffff;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 239, 244, 245;
+  --background-end-rgb: 255, 255, 255;
 
   --primary: #001F99;
   --secondary: #0D40FF;
   --secondary-opc: #5576ea;
-  --secondary-opc-ttl: #5576ea;
+  --secondary-opc-ttl: rgba(85, 118, 234, 0.4);
   --additional: #555A65;
+  --text: #2B2D33;
+  --bg-1: #808080;
+  --bg-2: #D7DAE2;
+  --bg-3: #E6E6E6;
 }
 
 body {
@@ -24,13 +31,20 @@ body {
   box-sizing: border-box;
 }
 
-.link {
-  display: inline-block;
+h1 {
+  font-size: 48px;
 }
 
-.link:hover {
-  color: var(--secondary);
-  transition: all .22s;
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .container {
@@ -38,6 +52,12 @@ body {
   max-width: 1280px;
   padding: 16px 24px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    padding: 16px;
+  }
 }
 
 .carousel {
