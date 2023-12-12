@@ -30,18 +30,18 @@
     }
     .test_header_desc {
         width: 100%;
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
 @media screen and (max-width: 620px) {
     .test_header_name {
         width: 100%;
-        font-size: 26px;
+        font-size: 30px;
     }
     .test_header_desc {
         width: 100%;
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 
